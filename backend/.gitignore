@@ -1,0 +1,56 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Dependency directories
+node_modules/
+
+# Build output
+build/
+dist/
+.tmp/
+tmp/
+
+# Environment files
+.env
+.env.*
+.env.local
+.env.*.local
+
+# Cache
+.cache/
+.eslintcache
+
+# OS/Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Uploads and generated assets
+uploads/
+public/uploads/
+
+# Misc
+*.tgz
+*.tar
+*.zip
+
+# TypeScript
+*.tsbuildinfo

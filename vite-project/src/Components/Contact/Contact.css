@@ -1,0 +1,16 @@
+/* Contact.css */
+input{
+    margin-bottom: 25px;
+    gap:15px;
+    
+}
+
+p.error {
+    color: red;
+}
+
+i:hover{
+    cursor: pointer;
+    color:#7A0BC0;
+    transition: color 0.4s ease-in-out;
+}

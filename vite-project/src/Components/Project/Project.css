@@ -1,0 +1,192 @@
+.image-container {
+    height: 300px;
+    width: 520px;
+    background: radial-gradient(circle at left, #2B0B3A, #300743);
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    
+}
+
+.image {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+/* Align text vertically in its column */
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    height: 100%; /* Full height of parent */
+}
+
+button {
+    position: relative;
+    background: transparent;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid white;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.4s ease-in-out;
+    z-index: 1;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: #7A0BC0; /* Bright Purple */
+    border-radius: 50%;
+    transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+button:hover {
+    color: white;
+}
+
+button:hover::before {
+    width: 300%;
+    height: 300%;
+}
+
+/* Project Card Styling */
+.project-card-container {
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+}
+
+.project-card {
+    background: linear-gradient(135deg, #1A0B2E, #2B0B3A);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    height: 400px; /* Fixed height for consistency */
+    width: 100%;
+    max-width: 400px; /* Reduced max width */
+    margin: 0 auto;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(122, 11, 192, 0.3);
+}
+
+.card-image-container {
+    height: 160px; /* Reduced height */
+    overflow: hidden;
+    background: linear-gradient(45deg, rgba(122, 11, 192, 0.1), rgba(255, 255, 255, 0.05));
+}
+
+.card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 1.2rem; /* Reduced padding */
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    height: 240px; /* Fixed height for body */
+}
+
+.card-title {
+    color: #fff;
+    font-size: 1.2rem; /* Reduced font size */
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    text-align: center;
+}
+
+.card-text {
+    color: #ccc;
+    font-size: 0.9rem; /* Reduced font size */
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    text-align: center;
+    flex-grow: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Limit to 4 lines */
+    -webkit-box-orient: vertical;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #7A0BC0, #9B4DDB);
+    border: none;
+    border-radius: 25px;
+    padding: 8px 20px; /* Reduced padding */
+    font-weight: 600;
+    font-size: 0.9rem; /* Reduced font size */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(122, 11, 192, 0.3);
+    margin-top: auto; /* Push button to bottom */
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #8B1BC0, #AC5DEB);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(122, 11, 192, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .col-lg-4 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    
+    .project-card {
+        max-width: 300px; /* Slightly smaller on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .col-lg-4, .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    .project-card {
+        margin: 0 auto;
+        max-width: 280px; /* Smaller on mobile */
+        height: 380px; /* Slightly shorter on mobile */
+    }
+    
+    .card-image-container {
+        height: 140px; /* Smaller image on mobile */
+    }
+    
+    .card-body {
+        height: 240px;
+        padding: 1rem;
+    }
+    
+    .card-title {
+        font-size: 1.1rem;
+    }
+    
+    .card-text {
+        font-size: 0.85rem;
+        -webkit-line-clamp: 3; /* Fewer lines on mobile */
+    }
+}

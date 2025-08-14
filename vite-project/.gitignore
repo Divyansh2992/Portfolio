@@ -1,0 +1,46 @@
+# Node
+node_modules/
+
+# Vite
+/dist
+/.vite
+vite.svg
+
+# Build output
+build/
+.docusaurus/
+.tmp/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor/OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Env files
+.env
+.env.*
+.env.local
+.env.*.local
+
+# Cache
+.cache/
+.eslintcache
+stylelintcache/
+
+# Test/coverage
+coverage/
+
+# Misc
+*.tgz
+*.tar
+*.zip

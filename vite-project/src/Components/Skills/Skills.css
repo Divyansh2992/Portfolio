@@ -1,0 +1,283 @@
+/* Skills Section Styling */
+.skills-section {
+    padding: 2rem 0;
+}
+
+.section-title {
+    color: #7A0BC0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Skills Tabs Styling */
+.skills-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.tab-container {
+    display: flex;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50px;
+    padding: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tab-button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    padding: 1rem 2rem;
+    margin: 0 0.25rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.tab-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.tab-button:hover::before {
+    left: 100%;
+}
+
+.tab-button:hover {
+    color: #7A0BC0;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tab-button.active {
+    background: linear-gradient(135deg, #7A0BC0, #9B4DDB);
+    color: white;
+    box-shadow: 0 4px 15px rgba(122, 11, 192, 0.4);
+    transform: translateY(-2px);
+}
+
+.tab-button.active:hover {
+    background: linear-gradient(135deg, #8B1BC0, #AC5DEB);
+    transform: translateY(-2px);
+}
+
+/* Skills Content */
+.skills-content {
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Skills Grid for Programming Languages and Tech Stacks */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(122, 11, 192, 0.1), rgba(255, 255, 255, 0.05));
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(122, 11, 192, 0.3);
+    border-color: rgba(122, 11, 192, 0.3);
+    background: linear-gradient(135deg, rgba(122, 11, 192, 0.15), rgba(255, 255, 255, 0.08));
+}
+
+.skill-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover .skill-logo {
+    transform: scale(1.1);
+}
+
+.skill-name {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Soft Skills Grid */
+.soft-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.soft-skill-item {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(122, 11, 192, 0.1));
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.soft-skill-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(122, 11, 192, 0.2);
+    border-color: rgba(122, 11, 192, 0.4);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(122, 11, 192, 0.15));
+}
+
+.soft-skill-name {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .tab-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-tabs {
+        margin-bottom: 2rem;
+    }
+    
+    .tab-container {
+        flex-direction: column;
+        border-radius: 25px;
+        padding: 0.5rem;
+    }
+    
+    .tab-button {
+        margin: 0.25rem 0;
+        border-radius: 20px;
+        padding: 0.8rem 1.2rem;
+        font-size: 0.85rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 1rem;
+        padding: 0 0.5rem;
+    }
+    
+    .skill-item {
+        padding: 1rem;
+    }
+    
+    .skill-logo {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .skill-name {
+        font-size: 0.8rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .soft-skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+        padding: 0 0.5rem;
+    }
+    
+    .soft-skill-item {
+        padding: 0.8rem 1.2rem;
+    }
+    
+    .soft-skill-name {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tab-button {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+    
+    .skill-item {
+        padding: 0.8rem;
+    }
+    
+    .skill-logo {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 0.5rem;
+    }
+    
+    .skill-name {
+        font-size: 0.75rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .soft-skills-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+}
