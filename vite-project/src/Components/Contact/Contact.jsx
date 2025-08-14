@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./Contact.css";
 
+const API_BASE = import.meta.env.VITE_API_URL || "https://divyanshvijayportfolio.onrender.com";
+
 export default function Contact() {
     const [firstname, setFirstname] = useState("");
     const [lastname, setLastname] = useState("");
@@ -8,13 +10,15 @@ export default function Contact() {
     const [phone, setPhone] = useState("");
     const [feedback, setFeedback] = useState("");
     const [message, setMessage] = useState("");
+    const [submitting, setSubmitting] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setMessage("");
+        setMessage("Sending...");
+        setSubmitting(true);
 
         try {
-            const response = await fetch("http://localhost:3000/contact", {
+            const response = await fetch(`${API_BASE}/contact`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -36,6 +40,8 @@ export default function Contact() {
             }
         } catch (error) {
             setMessage("Error connecting to the server.");
+        } finally {
+            setSubmitting(false);
         }
     };
 
@@ -116,8 +122,9 @@ export default function Contact() {
                                 <button 
                                     type="submit" 
                                     className="btn bg-transparent text-white border-white btn-lg w-50 py-3"
+                                    disabled={submitting}
                                 >
-                                    Send Message
+                                    {submitting ? "Sending..." : "Send Message"}
                                 </button>
                             </div>
 
@@ -146,8 +153,7 @@ export default function Contact() {
                             {/* Status Message */}
                             {message && (
                                 <div className="col-12 mt-3">
-                                    <div className={`alert ${message.includes("Thank you") ? 
-                                        'alert-success' : 'alert-danger'}`}>
+                                    <div className={`alert ${submitting ? 'alert-info' : (message.includes("Thank you") ? 'alert-success' : 'alert-danger')}`}>
                                         {message}
                                     </div>
                                 </div>
